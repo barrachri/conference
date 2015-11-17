@@ -566,16 +566,11 @@ class Talk(models.Model, UrlMixin):
     abstracts = generic.GenericRelation(
         MultilingualContent,
         verbose_name=_('Talk abstract'),
-        help_text=_('<p>Please enter a short description of the talk you are submitting. Be sure to includes the goals of your talk and any prerequisite required to fully understand it.</p><p>Suggested size: two or three paragraphs.</p>'))
-    abstracts = generic.GenericRelation(
+        help_text=_('<p>Please enter a full description of the talk you are submitting. Be sure to includes the goals of your talk and any prerequisite required to fully understand it.</p><p>Suggested size: two or three paragraphs.</p>'))
+    abstracts_short = generic.GenericRelation(
         MultilingualContent,
         verbose_name=_('Talk abstract'),
         help_text=_('<p>Please enter a short description of the talk you are submitting. Be sure to includes the goals of your talk and any prerequisite required to fully understand it.</p><p>Suggested size: two or three paragraphs.</p>'))
-    abstracts = generic.GenericRelation(
-        MultilingualContent,
-        verbose_name=_('Talk abstract'),
-        help_text=_('<p>Please enter a short description of the talk you are submitting. Be sure to includes the goals of your talk and any prerequisite required to fully understand it.</p><p>Suggested size: two or three paragraphs.</p>'))
-    
     slides = models.FileField(upload_to=_fs_upload_to('slides'), blank=True)
     video_type = models.CharField(max_length=30, choices=VIDEO_TYPE, blank=True)
     video_url = models.TextField(blank=True)
